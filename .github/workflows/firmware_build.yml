@@ -44,7 +44,7 @@ jobs:
           mv jq /usr/local/sbin/
 
           keyboards=$(bash bin/fp_build.sh -l| sed s~keyboards/fingerpunch/~~)
-
+          git update-index --refresh
           echo "${keyboards}" | while IFS= read -r line ; do
             case "$line" in
               *${{ matrix.keyboard }}*)
