@@ -45,28 +45,6 @@ OPT_DEFS += -DFP_EVQ_UNDER_PALMS
 
 PIMORONI_TRACKBALL_ENABLE = no
 
-ifeq ($(strip $(PIMORONI_TRACKBALL_ENABLE)), yes)
-    POINTING_DEVICE_ENABLE := yes
-    POINTING_DEVICE_DRIVER := pimoroni_trackball
-    OPT_DEFS += -DPIMORONI_TRACKBALL_ENABLE
-endif
-
-ifeq ($(strip $(FP_EC11_CENTER)), yes)
-   ENCODER_ENABLE := yes
-   OPT_DEFS += -DFP_EC11_CENTER
-endif
-
-ifeq ($(strip $(FP_EC11_UNDER_PALMS)), yes)
-   ENCODER_ENABLE := yes
-   OPT_DEFS += -DFP_EC11_UNDER_PALMS
-endif
-
-
-ifeq ($(strip $(FP_EVQ_UNDER_PALMS)), yes)
-   ENCODER_ENABLE := yes
-   OPT_DEFS += -DFP_EVQ_UNDER_PALMS
-endif
-
 DEFERRED_EXEC_ENABLE = yes
 SRC +=  keyboards/fingerpunch/fp.c \
 		keyboards/fingerpunch/fp_haptic.c \
